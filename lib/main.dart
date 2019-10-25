@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:kingsCup/rules.dart';
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 
 void main() => runApp(RandomImg());
@@ -86,14 +86,14 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     
   }
-  _launchURL(String url) async {
-    String url1 = url;
-    if (await canLaunch(url1)) {
-      await launch(url1);
-    } else {
-      throw 'Could not launch $url1';
-    }
-  }
+  // _launchURL(String url) async {
+  //   String url1 = url;
+  //   if (await canLaunch(url1)) {
+  //     await launch(url1);
+  //   } else {
+  //     throw 'Could not launch $url1';
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -101,12 +101,12 @@ class _HomeScreenState extends State<HomeScreen> {
   // BARRA DE NAVEGAÇÃO SUPERIOR
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.share),
+            icon: Icon(Icons.arrow_back),
             iconSize: 40,
             color: Colors.red,
             tooltip: "Compartilhar",
             onPressed: (){
-              _launchURL("https://github.com/gabrieloureiro");
+              //_launchURL("https://github.com/gabrieloureiro");
             }
         ),
         actions: <Widget>[
