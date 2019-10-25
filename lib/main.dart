@@ -1,12 +1,11 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:kingsCup/rules.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'package:kingsCup/cards.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+void main() => runApp(Home());
 
-void main() => runApp(RandomImg());
-
-class RandomImg extends StatelessWidget {
+class Home extends StatelessWidget {
+  Home({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,163 +18,91 @@ class RandomImg extends StatelessWidget {
 
 class HomeScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeState createState() => _HomeState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  var counterKing = [];
-
-  void counterK(){
-      counterKing.add(index);
-      int size = counterKing.length;
-      print("Counter King $counterKing");
-      if (size == 4) {
-        _showDialog();
-        counterKing = [];
-      }
+_launchURL(String url) async {
+  String url1 = url;
+  if (await canLaunch(url1)) {
+    await launch(url1);
+  } else {
+    throw 'Could not launch $url1';
   }
-   void _showDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("QUARTO REI!"),
-          content: Text("Você foi selecionado para beber o conteúdo do copo de reis."),
-          titleTextStyle: TextStyle(
-            color : Colors.red,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-          actions: <Widget>[
-            FlatButton(
-              child: Text(
-                "FECHAR",
-                style: TextStyle(
-                  color: Colors.red,
-                ),
-                ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-    });
-  }
-  int index = 1;
-  Random random = Random();
-  var _image = "images/cards/card(52).png"; 
+}
 
-  Widget imageprovider() {
-    return Image.asset(
-      _image,
-      fit: BoxFit.fill,
-      height: double.infinity,
-      width: double.infinity,
-    );
-  }
-  void _newImage() {
-    setState(() {
-      index = random.nextInt(52);
-      _image = "images/cards/card($index).png";
-      print(index);
-      if (index >= 48 && index <= 51) {
-        counterK();
-      }
-
-    });
-    
-  }
-  // _launchURL(String url) async {
-  //   String url1 = url;
-  //   if (await canLaunch(url1)) {
-  //     await launch(url1);
-  //   } else {
-  //     throw 'Could not launch $url1';
-  //   }
-  // }
-
-  @override
+class _HomeState extends State<HomeScreen> {
+@override
   Widget build(BuildContext context) {
-    return Scaffold(
-  // BARRA DE NAVEGAÇÃO SUPERIOR
-      appBar: AppBar(
-        leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            iconSize: 40,
-            color: Colors.red,
-            tooltip: "Compartilhar",
-            onPressed: (){
-              //_launchURL("https://github.com/gabrieloureiro");
-            }
+    return Stack(
+      children: <Widget>[
+        Image.asset(
+          "images/icons/casinobg.jpg",
+          fit: BoxFit.cover,
+          height: double.maxFinite,
+          width: double.maxFinite, 
+          alignment: Alignment.center,
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.help),
-            iconSize: 40,
-            color: Colors.red,
-            alignment: Alignment.centerRight,
-            onPressed: (){
-              Navigator.push(context,
-                MaterialPageRoute(
-                  builder: (context) => Rules()
-                ),
-              );
-                },
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            title: Text(
+              "KING'S CUP",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color : Colors.white,
               ),
-        ],
-        title: Image.asset(
-          "images/icons/appbar.jfif",
-          width: 108,
-        ),
-        backgroundColor: Colors.white,
-        centerTitle: true,  
-
-      ),
-      body: Container(
-        margin: EdgeInsets.all(5),
-        child: Center(
-          child: GestureDetector(
-            child: imageprovider(),
-            onTap: _newImage,
-              
+            ),
+            centerTitle: true,
           ),
-        )
-      ),
-      backgroundColor: Colors.grey,
-      //BARRA DE NAVEGAÇÃO INFERIOR
+          body: Container(
+            child: Row(
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.developer_mode),
+                  color: Colors.red,
+                  iconSize: 100,
+                  tooltip: "Conheça os desenvolvedores",
+                  alignment: Alignment.centerRight,
+                  onPressed: () {
+                    _launchURL("http://github.com/gabrieloureiro");
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.share),
+                  color: Colors.red,
+                  iconSize: 100,
+                  tooltip: "Compartilhe o aplicativo",
+                  alignment: Alignment.centerRight,
+                  onPressed: () {
+                    
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.play_arrow),
+                  color: Colors.red,
+                  iconSize: 100,
+                  tooltip: "JOGAR",
+                  alignment: Alignment.centerRight,
+                  onPressed: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                      builder: (context) => Cards()
+                      ),
+                    );
+                  },
+                )
+              ],
+            ) 
+          ),
+          //BARRA DE NAVEGAÇÃO INFERIOR
           // bottomNavigationBar: BottomNavigationBar(
           //   color: Colors.white,
           //   onPressed: (){
           // })       
 
-          // showDialog(
-                    
-          //           context: context,
-          //           builder: (BuildContext context) {
-          //             return AlertDialog(
-          //               title: Text("BEM-VINDO AO KINGS CUP"),
-          //               content: Text("Toque na carta para ler as respectivas regras."),
-          //               titleTextStyle: TextStyle(
-          //                 color : Colors.red,
-          //                 fontSize: 20,
-          //                 fontWeight: FontWeight.bold,
-          //               ),
-          //               actions: <Widget>[
-          //                 FlatButton(
-          //                   child: Text(
-          //                     "FECHAR",
-          //                     style: TextStyle(
-          //                       color: Colors.red,
-          //                     ),
-          //                     ),
-          //                   onPressed: () {
-          //                     Navigator.of(context).pop();
-          //                   },
-          //                 ),
-          //               ],
-          //             );
-          //           }); 
-    );
+      )
+    ],);
   }
 }
