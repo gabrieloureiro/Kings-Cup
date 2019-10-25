@@ -503,38 +503,19 @@ class _RulesState extends State<Rules> {
               Text(
               "",
               ),
-              IconButton(
-                icon: Icon(Icons.developer_mode),
-                color: Colors.red,
-                iconSize: 40,
-                alignment: Alignment.bottomCenter,
-                onPressed: (){
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Text("DESENVOLVEDORES:"),
-                        content: Text("Gabriel Loureiro - Developer Flutter\nDavi Ximenes - Developer Flutter"),
-                        contentTextStyle: TextStyle(
-                          color : Colors.red,
-                          fontSize: 15,
-                        ),
-                        actions: <Widget>[
-                          FlatButton(
-                            child: Text(
-                              "FECHAR",
-                              style: TextStyle(
-                                color: Colors.red,
-                              ),
-                              ),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
-                    });
-                },
+              Container(
+                child:
+                  Text(
+                    "kingsCup v.1.0.0_GD",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold
+                    ),
+                    textAlign: TextAlign.end,
+                  ),
+                alignment: Alignment.bottomRight,
+                padding: EdgeInsets.only(right: 5),
               ),
             ],
         )

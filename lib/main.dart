@@ -34,9 +34,10 @@ class _HomeState extends State<HomeScreen> {
 @override
   Widget build(BuildContext context) {
     return Stack(
+      
       children: <Widget>[
-        Image.asset(
-          "images/icons/casinobg.jpg",
+        Image.network(
+          "https://media.giphy.com/media/3ov9jUCYetT3GVwcy4/giphy.gif",
           fit: BoxFit.cover,
           height: double.maxFinite,
           width: double.maxFinite, 
