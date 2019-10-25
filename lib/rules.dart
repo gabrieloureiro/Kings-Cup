@@ -29,8 +29,8 @@ class _RulesState extends State<Rules> {
           ), 
           Image.asset(
             "images/icons/back_cards-07.png",
-            width: 104,
-          )
+            width: 106,
+            ),
         ],
       ),
         backgroundColor: Colors.red,
@@ -47,7 +47,7 @@ class _RulesState extends State<Rules> {
             children: <Widget>[
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (38).png",
+                  "images/cards/card(37).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -82,7 +82,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (1).png",
+                  "images/cards/card(0).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -117,7 +117,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (6).png",
+                  "images/cards/card(5).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -152,7 +152,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (9).png",
+                  "images/cards/card(8).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -187,7 +187,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (14).png",
+                  "images/cards/card(13).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -222,7 +222,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (17).png",
+                  "images/cards/card(16).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -257,7 +257,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (22).png",
+                  "images/cards/card(21).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -292,7 +292,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (25).png",
+                  "images/cards/card(24).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -327,7 +327,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (30).png",
+                  "images/cards/card(29).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -362,7 +362,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (36).png",
+                  "images/cards/card(32).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -397,7 +397,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (42).png",
+                  "images/cards/card(41).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -432,7 +432,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (45).png",
+                  "images/cards/card(44).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -467,7 +467,7 @@ class _RulesState extends State<Rules> {
               ),
               IconButton(
                 icon: Image.asset(
-                  "images/cards/card (50).png",
+                  "images/cards/card(49).png",
                   fit: BoxFit.cover,
                 ),
                 iconSize: 120,
@@ -477,7 +477,7 @@ class _RulesState extends State<Rules> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: Text("K: O CÉU E O INFERNO"),
-                        content: Text("A carta K é especial, pois possui um efeito distinto dependendo do contador. Caso você puxe o K e o contador for menor que 4, você deve despejar um pouco da sua bebida em um copo distinto. O participante que puxar o quarto K deve beber o conteúdo do copo. [ATENÇÃO]: O ícone do copo na página principal ficará vermelho para o último caso citado."),
+                        content: Text("A carta K é especial, pois possui um efeito distinto dependendo do contador. Caso você puxe o K e o contador for menor que 4, você deve despejar um pouco da sua bebida em um copo distinto. O participante que puxar o quarto K deve beber o conteúdo do copo. [ATENÇÃO]: Não tente escapar! O aplicativo notificará quando o quarto K for puxado."),
                         titleTextStyle: TextStyle(
                           color : Colors.red,
                           fontSize: 20,
@@ -514,7 +514,7 @@ class _RulesState extends State<Rules> {
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: Text("DESENVOLVEDORES:"),
-                        content: Text("Gabriel Loureiro - Dev. Flutter\nDavi Ximenes - Dev. Flutter"),
+                        content: Text("Gabriel Loureiro - Developer Flutter\nDavi Ximenes - Developer Flutter"),
                         contentTextStyle: TextStyle(
                           color : Colors.red,
                           fontSize: 15,

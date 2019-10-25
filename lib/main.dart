@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:kingsCup/rules.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 void main() => runApp(RandomImg());
 
@@ -21,10 +23,48 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  var counterKing = [];
+
+  void counterK(){
+      counterKing.add(index);
+      int size = counterKing.length;
+      print("Counter King $counterKing");
+      if (size == 4) {
+        _showDialog();
+        counterKing = [];
+      }
+  }
+   void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("QUARTO REI!"),
+          content: Text("Você foi selecionado para beber o conteúdo do copo de reis."),
+          titleTextStyle: TextStyle(
+            color : Colors.red,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text(
+                "FECHAR",
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+                ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+    });
+  }
   int index = 1;
   Random random = Random();
-  var _image = "images/cards/card (0).png";
-  int counterKing = 0;
+  var _image = "images/cards/card(52).png"; 
 
   Widget imageprovider() {
     return Image.asset(
@@ -32,61 +72,43 @@ class _HomeScreenState extends State<HomeScreen> {
       fit: BoxFit.fill,
       height: double.infinity,
       width: double.infinity,
-
     );
+  }
+  void _newImage() {
+    setState(() {
+      index = random.nextInt(52);
+      _image = "images/cards/card($index).png";
+      print(index);
+      if (index >= 48 && index <= 51) {
+        counterK();
+      }
+
+    });
     
   }
-  void _newImage() {     
-    setState((){
-      _image = "images/cards/card ($index).png";
-      index = random.nextInt(52);      
-    });
+  _launchURL(String url) async {
+    String url1 = url;
+    if (await canLaunch(url1)) {
+      await launch(url1);
+    } else {
+      throw 'Could not launch $url1';
+    }
   }
-
-
-  // void _kCupNull() {     
-  //   setState((){
-  //     counterKing = 0;
-  //     Text(
-  //       "Contador zerado! $counterKing Reis puxados"
-  //     );
-  //     print("Contador zerado! $counterKing Reis puxados");
-  // });
-  // }
-
-  // void _kCup(){
-  //   setState(() {
-  //       counterKing++;
-  //       Text(
-  //         "$counterKing Reis puxados."
-  //       );
-  //       print("$counterKing Reis puxados");
-  //   });
-  // }
- 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
   // BARRA DE NAVEGAÇÃO SUPERIOR
       appBar: AppBar(
-        leading: Icon(
-            Icons.local_drink,
-            size: 40,
-            color: Colors.grey,
+        leading: IconButton(
+            icon: Icon(Icons.share),
+            iconSize: 40,
+            color: Colors.red,
+            tooltip: "Compartilhar",
+            onPressed: (){
+              _launchURL("https://github.com/gabrieloureiro");
+            }
         ),
-
-            //alignment: Alignment.centerRight,
-      // )
-      //       onPressed: (){
-      //         // RETORNA A LISTA COM TODOS OS REIS PUXADOS
-      //          if(index >= 49){
-      //           _kCup();
-      //         }
-      //         if(counterKing >= 4){
-      //           _kCupNull();
-      //         }
-      //       }
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.help),
@@ -97,19 +119,17 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(context,
                 MaterialPageRoute(
                   builder: (context) => Rules()
-                )
+                ),
               );
-            },
-
-          )
+                },
+              ),
         ],
         title: Image.asset(
           "images/icons/appbar.jfif",
           width: 108,
         ),
         backgroundColor: Colors.white,
-        centerTitle: true,
-        
+        centerTitle: true,  
 
       ),
       body: Container(
@@ -118,6 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: GestureDetector(
             child: imageprovider(),
             onTap: _newImage,
+              
           ),
         )
       ),
@@ -126,11 +147,35 @@ class _HomeScreenState extends State<HomeScreen> {
           // bottomNavigationBar: BottomNavigationBar(
           //   color: Colors.white,
           //   onPressed: (){
-          // })        
+          // })       
+
+          // showDialog(
+                    
+          //           context: context,
+          //           builder: (BuildContext context) {
+          //             return AlertDialog(
+          //               title: Text("BEM-VINDO AO KINGS CUP"),
+          //               content: Text("Toque na carta para ler as respectivas regras."),
+          //               titleTextStyle: TextStyle(
+          //                 color : Colors.red,
+          //                 fontSize: 20,
+          //                 fontWeight: FontWeight.bold,
+          //               ),
+          //               actions: <Widget>[
+          //                 FlatButton(
+          //                   child: Text(
+          //                     "FECHAR",
+          //                     style: TextStyle(
+          //                       color: Colors.red,
+          //                     ),
+          //                     ),
+          //                   onPressed: () {
+          //                     Navigator.of(context).pop();
+          //                   },
+          //                 ),
+          //               ],
+          //             );
+          //           }); 
     );
   }
 }
-
-
-
-
