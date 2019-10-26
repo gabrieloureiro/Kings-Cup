@@ -23,16 +23,14 @@ class _RulesState extends State<Rules> {
               color: Colors.white,
             )
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 140),
-          ), 
-          Image.asset(
-            "images/icons/back_cards-07.png",
-            width: 106,
-            ),
         ],
       ),
+        actions: <Widget>[
+          Image.asset(
+            "images/icons/back_cards-07.png",
+            alignment: Alignment.centerRight,
+            ),
+        ],
         backgroundColor: Colors.red,
         centerTitle: true,
       ),
