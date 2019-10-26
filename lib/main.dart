@@ -27,7 +27,7 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   Future<Timer> loadData() async {
-    return new Timer(Duration(seconds: 5), onDoneLoading);
+    return  Timer(Duration(seconds: 5), onDoneLoading);
   }
 
   onDoneLoading() async {
@@ -47,7 +47,7 @@ class SplashScreenState extends State<SplashScreen> {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.red, Colors.white])),
+                colors: [Color(0xffff6e7f), Color(0xffbfe9ff)])),
           alignment: Alignment.topCenter,
           child: Image.asset(
             "images/icons/back_cards-07.png",
@@ -57,10 +57,11 @@ class SplashScreenState extends State<SplashScreen> {
         ),
         Container(
           alignment: Alignment.topCenter,
-          child: CircularProgressIndicator(
+          child: LinearProgressIndicator(
+            backgroundColor: Colors.white,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
           ),
-          padding: EdgeInsets.only(top:310),
+          padding: EdgeInsets.only(top:70,left: 30,right: 30),
         ),
         Container(
           alignment: Alignment.bottomCenter,
