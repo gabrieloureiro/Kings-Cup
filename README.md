@@ -20,6 +20,6 @@ The game is played with a tradicional 52 cards deck where each cards has a meani
 * [URL Launcher](https://pub.dev/packages/url_launcher) - A Flutter plugin for launching a URL
 
 # Contact
-You can get in touch with the developers on:
+You can get in touch with the developers here:
   * [Davi Ximenes - LinkedIn](https://www.linkedin.com/in/daviximenes/)
   * [Gabriel Loureiro - LinkedIn](https://www.linkedin.com/in/gabriel-loureiro-962050161/)
