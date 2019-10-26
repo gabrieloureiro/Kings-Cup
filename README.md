@@ -1,2 +1,2 @@
 # kingsCup
-A mobile application for a drinking game
+A Flutter mobile drinking game.
