@@ -1,4 +1,4 @@
-# kingsCup
+# King's Cup
 A Flutter mobile drinking game.
 
 
