@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kingsCup/cards.dart';
+import 'package:kingsCup/dev.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 // void main() => runApp(Home());
 
@@ -22,14 +22,7 @@ class HomeScreen extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-_launchURL(String url) async {
-  String url1 = url;
-  if (await canLaunch(url1)) {
-    await launch(url1);
-  } else {
-    throw 'Could not launch $url1';
-  }
-}
+
 
 class _HomeState extends State<HomeScreen> {
   @override
@@ -94,7 +87,7 @@ class _HomeState extends State<HomeScreen> {
                   tooltip: "Conheça os desenvolvedores",
                   alignment: Alignment.centerRight,
                   onPressed: () {
-                    _launchURL("http://github.com/gabrieloureiro");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Devs()));
                   },
                 ),
                 IconButton(
