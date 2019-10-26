@@ -35,12 +35,9 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon" 
   ios: true
-<<<<<<< HEAD
   image_path: "images/icons/kingsCup-icon.png"
-=======
-  image_path: "images/icons/aces.png"
   mdi: 0.2.0
->>>>>>> be4e5153d23e44cc72979fb12f3f651a6c4e84f6
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

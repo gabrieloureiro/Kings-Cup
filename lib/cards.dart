@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:kingsCup/rules.dart';
-import 'package:kingsCup/main.dart';
+import 'package:kingsCup/home.dart';
 //import 'package:url_launcher/url_launcher.dart';
 
 class Card extends StatelessWidget {
