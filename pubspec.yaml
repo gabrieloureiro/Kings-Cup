@@ -22,20 +22,25 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  material_design_icons_flutter: 3.2.4595
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   url_launcher: ^5.2.4
   link: ^1.0.0
-  flutter_launcher_icons: ^0.7.3
-  material_design_icons_flutter: ^3.2.4595
 
 
 flutter_icons:
   android: "launcher_icon" 
   ios: true
+<<<<<<< HEAD
   image_path: "images/icons/kingsCup-icon.png"
+=======
+  image_path: "images/icons/aces.png"
+  mdi: 0.2.0
+>>>>>>> be4e5153d23e44cc72979fb12f3f651a6c4e84f6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
