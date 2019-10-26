@@ -21,5 +21,5 @@ The game is played with a tradicional 52 cards deck where each cards has a meani
 
 # Contact
 You can get in touch with the developers on:
-  * [LinkedIn](https://www.linkedin.com/in/daviximenes/)
-  * [LinkedIn]()
+  * [Davi Ximenes - LinkedIn](https://www.linkedin.com/in/daviximenes/)
+  * [Gabriel Loureiro - LinkedIn]()
