@@ -81,7 +81,7 @@ class _HomeState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(MdiIcons.),
+                  icon: Icon(MdiIcons.githubCircle),
                   color: Colors.red,
                   //iconSize: 100,
                   tooltip: "Conheça os desenvolvedores",
