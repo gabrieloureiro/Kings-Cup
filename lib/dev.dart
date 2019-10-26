@@ -19,56 +19,71 @@ class _DevsState extends State<Devs> {
 }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: Text('Desevolvedores',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-          ),
-          textAlign: TextAlign.center,),
-        ),
-        body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-               
-            Padding(
-              padding: EdgeInsets.all(30),
-              child: Column(
-                children: <Widget>[
-                  GestureDetector(
-                    onTap: () {
-                       _launchURL("https://github.com/gabrieloureiro");
-
-                    },
-                    child: CircleAvatar(
-                      backgroundImage:
-                          ExactAssetImage('images/icons/gabriel.jpeg'),
-                      minRadius: 80,
-                      maxRadius: 120,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      _launchURL("https://github.com/daviximenes");
-   
-                    },
-                    child: CircleAvatar(
-                      backgroundImage: ExactAssetImage('images/icons/eu.jpeg'),
-                      minRadius: 80,
-                      maxRadius: 120,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  )
-                ],
-              ),
+      
+      return Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xffff6e7f), Color(0xffbfe9ff)]
+              )
             )
-            ],
-        )));
+          ),
+          Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.red,
+              title: Text('DESENVOLVEDORES',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+              ),
+              textAlign: TextAlign.center,),
+            ),
+            body: Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Column(
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          _launchURL("https://github.com/gabrieloureiro");
+
+                        },
+                        child: CircleAvatar(
+                          backgroundImage:
+                              ExactAssetImage('images/icons/gabriel.jpeg'),
+                          minRadius: 80,
+                          maxRadius: 120,                     
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 30),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          _launchURL("https://github.com/daviximenes");
+      
+                        },
+                        child: CircleAvatar(
+                          backgroundImage: ExactAssetImage('images/icons/eu.jpeg'),
+                          minRadius: 80,
+                          maxRadius: 120,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                ],
+            )
+          )
+          )
+        ],
+      );
   }
 }
