@@ -97,8 +97,6 @@ class _HomeState extends State<HomeScreen> {
                     _launchURL("http://github.com/gabrieloureiro");
                   },
                 ),
-                
-               
                 IconButton(
                   icon: Icon(Icons.share),
                   color: Colors.red,
