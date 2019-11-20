@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Random Images',
+      title: "King's Cup",
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
